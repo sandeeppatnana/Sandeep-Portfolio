@@ -11,7 +11,7 @@ export default function Contact() {
           description="Reach out directly through any of the channels below."
         />
 
-        <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <ContactRow
             label="Email"
             value={profile.email}
@@ -55,16 +55,16 @@ function ContactRow({ label, value, href, icon }: { label: string; value: string
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
-      className="card-surface flex items-center gap-3.5 p-4"
+      className="card-surface flex min-w-0 flex-col items-center justify-center gap-3.5 p-4 text-center sm:flex-row sm:justify-start sm:text-left"
     >
       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[var(--color-accent-soft)] text-[var(--color-accent-ink)]">
         {icon}
       </span>
-      <span className="min-w-0">
+      <span className="min-w-0 max-w-full sm:max-w-none">
         <span className="block text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-faint)]">
           {label}
         </span>
-        <span className="block truncate text-sm font-medium text-[var(--color-ink)]">{value}</span>
+        <span className="block break-all text-sm font-medium text-[var(--color-ink)] sm:truncate">{value}</span>
       </span>
     </a>
   );

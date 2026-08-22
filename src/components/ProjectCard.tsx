@@ -9,15 +9,15 @@ export default function ProjectCard({
   onOpenDetails: (project: Project) => void;
 }) {
   return (
-    <article className="card-surface flex h-full flex-col p-6">
-      <span className="eyebrow mb-3.5 w-fit rounded-full border border-[var(--color-border)] px-2.5 py-1">
+    <article className="card-surface flex h-full flex-col p-4 sm:p-6">
+      <span className="eyebrow mb-3.5 hidden w-fit rounded-full border border-[var(--color-border)] px-2.5 py-1 sm:inline-block">
         {project.category}
       </span>
 
       <h3 className="text-lg font-semibold leading-snug text-[var(--color-ink)]">{project.name}</h3>
       <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-muted)]">{project.description}</p>
 
-      <div className="mt-4">
+      <div className="mt-4 hidden sm:block">
         <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-faint)]">
           Key areas
         </p>
@@ -33,7 +33,7 @@ export default function ProjectCard({
         </div>
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-1.5">
+      <div className="mt-4 hidden flex-wrap gap-1.5 sm:flex">
         {project.tools.map((tool) => (
           <span
             key={tool}

@@ -172,24 +172,27 @@ export default function Navbar() {
           </Button>
         </div>
 
-        <button
-          type="button"
-          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-md text-[var(--color-ink)] hover:bg-[var(--color-bg)]"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          onClick={() => setMenuOpen((v) => !v)}
-        >
-          {menuOpen ? (
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M6 6L18 18M6 18L18 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-            </svg>
-          ) : (
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-            </svg>
-          )}
-        </button>
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeMenu theme={theme} onChange={setTheme} />
+          <button
+            type="button"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md text-[var(--color-ink)] hover:bg-[var(--color-bg)]"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            {menuOpen ? (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 6L18 18M6 18L18 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              </svg>
+            )}
+          </button>
+        </div>
       </Container>
 
       {menuOpen && (
@@ -220,16 +223,6 @@ export default function Navbar() {
             })}
           </ul>
           <div className="mt-4 flex flex-col gap-2.5">
-            <div className="flex items-center justify-between rounded-md border border-[var(--color-border)] px-3 py-2">
-              <span className="text-sm font-medium text-[var(--color-ink-muted)]">Theme</span>
-              <ThemeMenu
-                theme={theme}
-                onChange={(mode) => {
-                  setTheme(mode);
-                  setMenuOpen(false);
-                }}
-              />
-            </div>
             <Button as="a" href={profile.resumePdfPath} download variant="secondary" className="w-full">
               Download Resume
             </Button>
