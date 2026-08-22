@@ -500,23 +500,20 @@ export type Achievement = {
   id: string;
   title: string;
   description: string;
-  date: string;
 };
 
 export const achievements: Achievement[] = [
   {
     id: "ach-1",
-    title: "PLACEHOLDER — Achievement or recognition title",
+    title: "Expertise in Quality Engineering and Project Coordination",
     description:
-      "PLACEHOLDER — brief description of the achievement and its context.",
-    date: "PLACEHOLDER — YYYY",
+      "Demonstrated expertise in quality engineering principles and project coordination practices, ensuring successful delivery of software projects.",
   },
   {
     id: "ach-2",
-    title: "PLACEHOLDER — Achievement or recognition title",
+    title: "Founding Team Member of Aurumi Products",
     description:
-      "PLACEHOLDER — brief description of the achievement and its context.",
-    date: "PLACEHOLDER — YYYY",
+      "Contributed to the founding and early development of Aurumi Products, playing a key role in shaping the company's vision and strategic direction.",
   },
 ];
 
@@ -531,10 +528,10 @@ export type EducationItem = {
 export const education: EducationItem[] = [
   {
     id: "edu-1",
-    degree: "PLACEHOLDER — Degree, Field of Study",
-    institution: "PLACEHOLDER — Institution Name",
-    duration: "PLACEHOLDER — YYYY – YYYY",
-    detail: "PLACEHOLDER — honors, relevant coursework, etc. (optional)",
+    degree: "Bachelor of Technology (B.Tech) in Computer Science",
+    institution: "Malla Reddy University, Hyderabad, India",
+    duration: "2020 - 2024",
+    detail: "Bachelor of Technology in Computer Science/Engineering with coursework in Software Engineering, DBMS, Computer Networks, Web Technologies, and Software Testing.",
   },
 ];
 
@@ -549,7 +546,7 @@ export type CertificationItem = {
 export const certifications: CertificationItem[] = [
   {
     id: "cert-1",
-    name: "PLACEHOLDER — Certification Name",
+    name: "AWS",
     issuer: "PLACEHOLDER — Issuing Organization",
     date: "PLACEHOLDER — YYYY",
     credentialUrl: undefined,
@@ -623,6 +620,7 @@ export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
   { label: "My Work", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Resume", href: "#resume" },
