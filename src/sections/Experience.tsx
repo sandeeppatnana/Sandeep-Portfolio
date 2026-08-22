@@ -27,9 +27,9 @@ export default function Experience() {
                 <span className="h-2 w-2 rounded-full bg-[var(--color-accent)]" />
               </span>
 
-              <div className="card-surface p-6">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <div>
+              <div className="card-surface p-4 sm:p-6">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-x-4">
+                  <div className="min-w-0">
                     <h3 className="text-lg font-semibold text-[var(--color-ink)]">{item.role}</h3>
                     <p className="mt-0.5 text-sm font-medium text-[var(--color-accent-ink)]">{item.company}</p>
                   </div>
@@ -47,7 +47,7 @@ export default function Experience() {
                       {item.responsibilities.map((r, i) => (
                         <li key={i} className="flex gap-2.5 text-sm leading-relaxed text-[var(--color-ink-muted)]">
                           <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-[var(--color-ink-faint)]" />
-                          {r}
+                          <span className="min-w-0 flex-1">{r}</span>
                         </li>
                       ))}
                     </ul>
@@ -60,7 +60,7 @@ export default function Experience() {
                       {item.impact.map((r, i) => (
                         <li key={i} className="flex gap-2.5 text-sm leading-relaxed text-[var(--color-ink-muted)]">
                           <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-[var(--color-pass)]" />
-                          {r}
+                          <span className="min-w-0 flex-1">{r}</span>
                         </li>
                       ))}
                     </ul>

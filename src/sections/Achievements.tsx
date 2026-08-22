@@ -7,9 +7,9 @@ export default function Achievements() {
       <Container>
         <SectionHeading eyebrow="education" title="Achievements & education" />
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-faint)] mb-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-faint)]">
               Achievements
             </p>
             <div className="space-y-3.5">
@@ -23,13 +23,13 @@ export default function Achievements() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-faint)] mb-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-faint)]">
               Education
             </p>
             <div className="space-y-3.5">
               {education.map((e) => (
                 <div key={e.id} className="card-surface p-5">
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
                     <p className="text-sm font-semibold leading-snug text-[var(--color-ink)]">{e.degree}</p>
                     <span className="eyebrow shrink-0">{e.duration}</span>
                   </div>
