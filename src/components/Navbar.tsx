@@ -4,10 +4,98 @@ import { useActiveSection } from "../hooks/useActiveSection";
 import { Container } from "./Layout";
 import Button from "./Button";
 
+type ThemeMode = "light" | "dark" | "system";
+
+const themeStorageKey = "portfolio-theme";
+
+const themeOptions: Array<{ mode: ThemeMode; label: string }> = [
+  { mode: "light", label: "Light theme" },
+  { mode: "dark", label: "Dark theme" },
+  { mode: "system", label: "System theme" },
+];
+
+function ThemeIcon({ mode }: { mode: ThemeMode }) {
+  if (mode === "light") {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.8" />
+        <path d="M12 2.5V5M12 19V21.5M4.58 4.58L6.35 6.35M17.65 17.65L19.42 19.42M2.5 12H5M19 12H21.5M4.58 19.42L6.35 17.65M17.65 6.35L19.42 4.58" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (mode === "dark") {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M20.5 15.3A8.5 8.5 0 0 1 8.7 3.5A8.5 8.5 0 1 0 20.5 15.3Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="13" rx="1.8" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M8 21H16M12 17V21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function ThemeMenu({ theme, onChange }: { theme: ThemeMode; onChange: (mode: ThemeMode) => void }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        aria-label="Choose theme"
+        aria-expanded={open}
+        aria-haspopup="menu"
+        onClick={() => setOpen((value) => !value)}
+        className="inline-flex h-9 w-9 items-center justify-center rounded-md text-[var(--color-ink-muted)] transition-colors hover:bg-[var(--color-bg)] hover:text-[var(--color-ink)]"
+      >
+        <ThemeIcon mode={theme} />
+      </button>
+      {open && (
+        <div className="absolute right-0 top-full z-50 mt-2 flex gap-1 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-1.5 shadow-[var(--shadow-card-hover)]" role="menu" aria-label="Theme options">
+          {themeOptions.map((option) => (
+            <button
+              key={option.mode}
+              type="button"
+              role="menuitemradio"
+              aria-label={option.label}
+              aria-checked={theme === option.mode}
+              onClick={() => {
+                onChange(option.mode);
+                setOpen(false);
+              }}
+              className={`inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors ${
+                theme === option.mode
+                  ? "bg-[var(--color-accent-soft)] text-[var(--color-accent-ink)]"
+                  : "text-[var(--color-ink-muted)] hover:bg-[var(--color-bg)] hover:text-[var(--color-ink)]"
+              }`}
+            >
+              <ThemeIcon mode={option.mode} />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState<ThemeMode>(() => {
+    const savedTheme = window.localStorage.getItem(themeStorageKey);
+    return savedTheme === "light" || savedTheme === "dark" || savedTheme === "system" ? savedTheme : "light";
+  });
   const activeId = useActiveSection(navLinks.map((l) => l.href.replace("#", "")));
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem(themeStorageKey, theme);
+  }, [theme]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -78,11 +166,9 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
+          <ThemeMenu theme={theme} onChange={setTheme} />
           <Button as="a" href={profile.resumePdfPath} download variant="secondary" size="sm">
             Resume
-          </Button>
-          <Button as="a" href="#contact" variant="primary" size="sm">
-            Get in touch
           </Button>
         </div>
 
@@ -134,11 +220,18 @@ export default function Navbar() {
             })}
           </ul>
           <div className="mt-4 flex flex-col gap-2.5">
+            <div className="flex items-center justify-between rounded-md border border-[var(--color-border)] px-3 py-2">
+              <span className="text-sm font-medium text-[var(--color-ink-muted)]">Theme</span>
+              <ThemeMenu
+                theme={theme}
+                onChange={(mode) => {
+                  setTheme(mode);
+                  setMenuOpen(false);
+                }}
+              />
+            </div>
             <Button as="a" href={profile.resumePdfPath} download variant="secondary" className="w-full">
               Download Resume
-            </Button>
-            <Button as="a" href="#contact" variant="primary" onClick={() => setMenuOpen(false)} className="w-full">
-              Get in touch
             </Button>
           </div>
         </nav>

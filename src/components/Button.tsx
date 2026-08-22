@@ -10,7 +10,7 @@ const variantClasses: Record<Variant, string> = {
   primary:
     "bg-[var(--color-accent)] text-white shadow-[var(--shadow-button)] hover:bg-[var(--color-accent-ink)]",
   secondary:
-    "border border-[var(--color-border-strong)] bg-white text-[var(--color-ink)] hover:border-[var(--color-ink)]",
+    "border border-[var(--color-border-strong)] bg-[var(--color-surface)] text-[var(--color-ink)] hover:border-[var(--color-ink)]",
   ghost: "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] hover:bg-[var(--color-bg)]",
 };
 

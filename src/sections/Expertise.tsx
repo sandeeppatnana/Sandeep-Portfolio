@@ -42,7 +42,7 @@ export default function Projects() {
                 className={`min-h-9 rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors ${
                   isActive
                     ? "border-[var(--color-accent)] bg-[var(--color-accent)] text-white"
-                    : "border-[var(--color-border)] bg-white text-[var(--color-ink-muted)] hover:border-[var(--color-ink)] hover:text-[var(--color-ink)]"
+                    : "border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-ink-muted)] hover:border-[var(--color-ink)] hover:text-[var(--color-ink)]"
                 }`}
               >
                 {f}

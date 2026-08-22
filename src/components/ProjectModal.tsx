@@ -38,8 +38,8 @@ export default function ProjectModal({
         onClick={onClose}
       />
 
-      <div className="relative z-10 max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-[var(--color-border)] bg-white shadow-[var(--shadow-card-hover)]">
-        <div className="sticky top-0 flex items-start justify-between gap-4 border-b border-[var(--color-border)] bg-white/95 backdrop-blur px-6 py-5">
+      <div className="relative z-10 max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[var(--shadow-card-hover)]">
+        <div className="sticky top-0 flex items-start justify-between gap-4 border-b border-[var(--color-border)] bg-[var(--color-surface)]/95 backdrop-blur px-6 py-5">
           <div>
             <p className="eyebrow mb-1.5">{project.category}</p>
             <h3 id="project-modal-title" className="text-xl font-semibold leading-snug text-[var(--color-ink)]">
