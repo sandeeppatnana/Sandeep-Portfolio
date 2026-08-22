@@ -129,7 +129,7 @@ export const about = {
     {
       label: "API Testing",
       detail:
-        "REST API validation, authentication, CRUD, negative testing, and data integrity",
+        "FAST API validation, authentication, CRUD, negative testing, and data integrity",
     },
     {
       label: "Performance Testing",
@@ -188,7 +188,7 @@ export const experience: ExperienceItem[] = [
     responsibilities: [
       "Led quality validation across 30+ applications, designing and executing 1500+ test cases across functional, regression, API, usability, and end-to-end workflows.",
       "Performed REST API testing on FastAPI services using Postman, validating authentication, CRUD operations, negative scenarios, response behavior, and data integrity.",
-      "Managed the complete defect lifecycle in JIRA, including defect identification, severity assessment, prioritization, triage, retesting, closure, and root-cause analysis.",
+      "Managed the complete defect lifecycle in dEV Harmony, including defect identification, severity assessment, prioritization, triage, retesting, closure, and root-cause analysis.",
       "Coordinated UAT activities with Product and business stakeholders, validating acceptance criteria, managing feedback, and supporting formal release sign-off.",
       "Served as a QA liaison between Product, Development, and business teams, clarifying requirements, scope, acceptance criteria, dependencies, and quality risks.",
       "Supported Agile/Scrum delivery through sprint planning, backlog grooming, task tracking, requirement clarification, and release coordination.",
@@ -199,7 +199,7 @@ export const experience: ExperienceItem[] = [
     impact: [
       "Increased test coverage by 30% through structured test strategies and comprehensive test-case design.",
       "Reduced post-release defects by 20% through stronger regression coverage and proactive quality validation.",
-      "Resolved 400+ defects, including 100+ critical-severity issues, across 20+ enterprise applications.",
+      "Resolved Major defects, including 100+ critical-severity issues, across 30+ enterprise applications.",
       "Reduced average defect turnaround time by 15% through structured triage, prioritization, root-cause analysis, and cross-functional collaboration.",
       "Improved release readiness through coordinated UAT, proactive quality-risk identification, and stakeholder sign-offs."
     ],
