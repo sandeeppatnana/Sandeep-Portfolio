@@ -571,6 +571,15 @@ export type Repository = {
 export const repositories: Repository[] = [
   {
     id: "repo-1",
+    name: "Resume-Builder",
+    description:
+      "A modern React-based Resume Builder that helps users create professional, ATS-friendly resumes with customizable sections, templates, live preview, and PDF export.",
+    technologies: ["Javascript", "HTML", "CSS"],
+    url: "https://github.com/sandeeppatnana/resume-builder",
+  },
+
+  {
+    id: "repo-2",
     name: "Aurumi",
     description:
       "Business software platform supporting integrated workflows across CRM, dashboards, productivity, and AI-powered capabilities.",
@@ -579,7 +588,7 @@ export const repositories: Repository[] = [
   },
 
   {
-    id: "repo-2",
+    id: "repo-3",
     name: "support-desk-dashboards",
     description:
       "Dashboard implementation focused on support operations, workload visibility, service metrics, and actionable reporting.",
@@ -588,7 +597,7 @@ export const repositories: Repository[] = [
   },
 
   {
-    id: "repo-3",
+    id: "repo-4",
     name: "attendance-dashboards",
     description:
       "Role-based attendance dashboards providing visibility into attendance patterns, employee activity, and workforce metrics.",
@@ -597,7 +606,7 @@ export const repositories: Repository[] = [
   },
 
   {
-    id: "repo-4",
+    id: "repo-5",
     name: "deals-dashboards",
     description:
       "Sales and deal management dashboards focused on pipeline visibility, performance tracking, and business reporting.",
@@ -606,7 +615,7 @@ export const repositories: Repository[] = [
   },
 
   {
-    id: "repo-5",
+    id: "repo-6",
     name: "Sandeep-Portfolio",
     description:
       "Personal portfolio showcasing my experience in Quality Engineering, Project Coordination, GenAI testing, and software delivery.",
