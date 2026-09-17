@@ -8,6 +8,7 @@ import Expertise from "./sections/Expertise";
 import Skills from "./sections/Skills";
 import Resume from "./sections/Resume";
 import GitHubShowcase from "./sections/GitHubShowcase";
+import Products from "./sections/Products";
 import Contact from "./sections/Contact";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Expertise />
         <Skills />
         <Resume />
+        <Products />
         <GitHubShowcase />
         <Contact />
       </main>

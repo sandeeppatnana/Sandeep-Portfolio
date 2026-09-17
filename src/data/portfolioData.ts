@@ -255,7 +255,7 @@ export const projects: Project[] = [
     name: "API Test Suite — Authentication & CRUD Validation",
     category: "API Testing",
     description:
-      "A structured API testing suite covering authentication, CRUD operations, negative scenarios, response validation, and backend data integrity for RESTful services.",
+      "Designed and executed API test cases covering authentication, CRUD operations, negative scenarios, response validation, and backend data integrity.",
 
     tools: ["Postman", "REST API", "SQL", "PostgreSQL"],
 
@@ -443,57 +443,57 @@ export const projects: Project[] = [
   },
 
   {
-  id: "proj-delivery-coordination",
-  name: "Project Delivery Coordination",
-  category: "Project & Delivery",
+    id: "proj-delivery-coordination",
+    name: "Project Delivery Coordination",
+    category: "Project & Delivery",
 
-  description:
-    "Project delivery coordination focused on planning, task tracking, stakeholder communication, dependency management, risk identification, and keeping cross-functional work aligned toward delivery goals.",
+    description:
+      "Project delivery coordination focused on planning, task tracking, stakeholder communication, dependency management, risk identification, and keeping cross-functional work aligned toward delivery goals.",
 
-  tools: [
-    "Jira",
-    "Confluence",
-    "Microsoft Teams",
-    "Excel",
-  ],
-
-  testingAreas: ["Project planning", "Task tracking", "Dependency management", "issue tracking", "Release coordination", "Stakeholder communication"],
-
-  projectManagementAreas: [
-    "Requirement coordination",
-    "Task & priority tracking",
-    "Sprint coordination",
-    "Cross-functional coordination",
-    "Stakeholder communication",
-    "Dependency tracking",
-    "Risk & issue management",
-    "Status reporting",
-    "Timeline tracking",
-    "Release coordination",
-  ],
-
-  githubUrl:
-    "https://github.com/PLACEHOLDER-username/project-delivery-coordination",
-
-  details: {
-    overview:
-      "A project coordination portfolio project demonstrating the planning, tracking, communication, and follow-up activities required to keep cross-functional initiatives aligned and progressing toward delivery goals.",
-
-    approach: [
-      "Coordinated requirements, priorities, and deliverables across project stakeholders",
-      "Tracked tasks, ownership, priorities, dependencies, and progress throughout the delivery cycle",
-      "Facilitated communication between business, product, development, and other stakeholders",
-      "Monitored project timelines and followed up on pending or delayed activities",
-      "Identified delivery risks, blockers, and dependencies and escalated them when required",
-      "Maintained project status updates and communicated progress to relevant stakeholders",
-      "Supported sprint and milestone planning by coordinating priorities and deliverables",
-      "Coordinated release activities and followed up on outstanding actions before delivery",
+    tools: [
+      "Jira",
+      "Confluence",
+      "Microsoft Teams",
+      "Excel",
     ],
 
-    scope:
-      "Covers project planning, task and milestone tracking, stakeholder coordination, dependency management, risk and issue tracking, status communication, and release coordination.",
-  },
-}
+    testingAreas: ["Project planning", "Task tracking", "Dependency management", "issue tracking", "Release coordination", "Stakeholder communication"],
+
+    projectManagementAreas: [
+      "Requirement coordination",
+      "Task & priority tracking",
+      "Sprint coordination",
+      "Cross-functional coordination",
+      "Stakeholder communication",
+      "Dependency tracking",
+      "Risk & issue management",
+      "Status reporting",
+      "Timeline tracking",
+      "Release coordination",
+    ],
+
+    githubUrl:
+      "https://github.com/PLACEHOLDER-username/project-delivery-coordination",
+
+    details: {
+      overview:
+        "A project coordination portfolio project demonstrating the planning, tracking, communication, and follow-up activities required to keep cross-functional initiatives aligned and progressing toward delivery goals.",
+
+      approach: [
+        "Coordinated requirements, priorities, and deliverables across project stakeholders",
+        "Tracked tasks, ownership, priorities, dependencies, and progress throughout the delivery cycle",
+        "Facilitated communication between business, product, development, and other stakeholders",
+        "Monitored project timelines and followed up on pending or delayed activities",
+        "Identified delivery risks, blockers, and dependencies and escalated them when required",
+        "Maintained project status updates and communicated progress to relevant stakeholders",
+        "Supported sprint and milestone planning by coordinating priorities and deliverables",
+        "Coordinated release activities and followed up on outstanding actions before delivery",
+      ],
+
+      scope:
+        "Covers project planning, task and milestone tracking, stakeholder coordination, dependency management, risk and issue tracking, status communication, and release coordination.",
+    },
+  }
 ];
 
 export type Achievement = {
@@ -580,11 +580,11 @@ export const repositories: Repository[] = [
 
   {
     id: "repo-2",
-    name: "Aurumi",
+    name: "ResumeBase",
     description:
-      "Business software platform supporting integrated workflows across CRM, dashboards, productivity, and AI-powered capabilities.",
-    technologies: ["HTML", "JavaScript", "Web"],
-    url: "https://github.com/sandeeppatnana/Aurumi",
+      "ResumeBase makes resume building simple with professional, ATS-friendly templates, easy editing, live preview, and convenient resume management.",
+    technologies: ["React", "JavaScript", "FastAPI", "Python", "PostgreSQL"],
+    url: "https://github.com/sandeeppatnana/resumebase",
   },
 
   {
@@ -633,5 +633,6 @@ export const navLinks = [
   { label: "My Work", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Resume", href: "#resume" },
+  { label: "Products", href: "#products" },
   { label: "Contact", href: "#contact" },
 ];
